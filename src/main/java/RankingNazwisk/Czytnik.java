@@ -22,7 +22,7 @@ public class Czytnik {
                     meskie.add(pozycja + ". " + imie);
                 } else {
                     String imie_szukane = imie.substring(0, imie.indexOf(","));
-                    if (imie_szukane.equals(parametr) && !(imie.contains("Nazwisko"))) {
+                    if (imie_szukane.contains(parametr) && !(imie.contains("Nazwisko"))) {
                         imie = imie.replace(",", "      Liczba: ");
                         // Dodanie nazwiska do listy
                         meskie.add(pozycja + ". " + imie);
@@ -49,7 +49,7 @@ public class Czytnik {
                     damskie.add(pozycja + ". " + imie);
                 } else {
                     String imie_szukane = imie.substring(0, imie.indexOf(","));
-                    if (imie_szukane.equals(parametr) && !(imie.contains("Nazwisko"))) {
+                    if (imie_szukane.contains(parametr) && !(imie.contains("Nazwisko"))) {
                         imie = imie.replace(",", "      Liczba: ");
                         // Dodanie nazwiska do listy
                         damskie.add(pozycja + ". " + imie);
@@ -91,8 +91,7 @@ public class Czytnik {
                 String imie_pierwsze = wszystkie.get(i).substring(wszystkie.get(i).indexOf("."), wszystkie.get(i).indexOf(":") - 13);
                 if (i + 1 < wszystkie.size()) {
                     String imie_drugie = wszystkie.get(i + 1).substring(wszystkie.get(i + 1).indexOf("."), wszystkie.get(i + 1).indexOf(":") - 13);
-                    if (imie_pierwsze.equals(imie_drugie)) {
-                        System.out.println("Chuj");
+                    if (imie_pierwsze.contains(imie_drugie)) {
                         int liczba_pierwsza = Integer.parseInt(wszystkie.get(i).substring(wszystkie.get(i).indexOf(":") + 2));
                         System.out.println(liczba_pierwsza);
                         int liczba_druga = Integer.parseInt(wszystkie.get(i + 1).substring(wszystkie.get(i + 1).indexOf(":") + 2));
